@@ -1,0 +1,19 @@
+
+<ion-content>
+
+  <ion-card no-margin padding>
+    <button ion-button color="secondary" navPop icon-start outline round small>
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      <div>رجوع</div>
+    </button>
+    <ion-card-title>
+      {{ad_data.title}}
+    </ion-card-title>
+    <ion-label> <strong> تاريخ النشر :</strong> {{ad_data.created_at | date: 'short'}}</ion-label>
+    <ion-card-content [innerHTML]= ad_data.content>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

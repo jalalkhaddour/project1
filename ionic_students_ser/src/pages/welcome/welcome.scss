@@ -1,0 +1,18 @@
+page-welcome {
+
+  img {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 50px auto;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: color($colors, primary);
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #ffffffa0;
+  }
+}

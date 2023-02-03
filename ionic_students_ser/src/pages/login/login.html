@@ -1,0 +1,74 @@
+<ion-content>
+  <img class="logo_login" src="../../assets/imgs/logo.png">
+  
+  <ion-row justify-content-center>
+    <p class="w-title" text-center>
+      مرحباً بك
+    </p>
+    <p class="title" text-center>
+      تسجيل الدخول
+    </p>
+  </ion-row>
+
+
+  <ion-row [formGroup]="loginForm">
+    <ion-col col-12 padding-right padding-left center text-center>
+
+      <ion-item text-wrap class="item-border">
+        <ion-icon name="mail" color="secondary" item-start></ion-icon>
+        <ion-input [(ngModel)]="email" formControlName="email"  placeholder="البريد الإلكتروني" type="email" id="email" min="8" required="required"
+          autocomplete="off" name="email"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+        <ng-container
+          *ngFor="let validation of validation_messages.email"
+        >
+          <div
+            class="error-message"
+            *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').touched)"
+          >
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    </ion-col>
+
+    <ion-col col-12 padding-right padding-left center text-center>
+      <ion-item text-wrap class="item-border">
+        <ion-icon name="lock" color="secondary" item-start></ion-icon>
+        <ion-input type="password" [(ngModel)]="password" formControlName="password" placeholder="كلمة المرور" id="password" min="8"
+          required="required" autocomplete="off" name="password"></ion-input>
+      </ion-item>
+
+      <div class="validation-errors">
+        <ng-container
+          *ngFor="let validation of validation_messages.password"
+        >
+          <div
+            class="error-message"
+            *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').touched)"
+          >
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    </ion-col>
+    
+  </ion-row>
+
+  <ion-row padding justify-content-center>
+    <button ion-button clear class="login-btn" (click)="login()">
+      تسجيل الدخول
+    </button>
+  </ion-row>
+
+  <ion-row class="border" padding justify-content-center>
+      <p text-center class="no-account1"> لا تملك حساب؟! </p>
+      <p text-center class="no-account2" (click)=goToSignup()> سجل هنا </p>
+  </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,43 @@
+page-signup {
+
+  .title {
+    margin-top: 40px;
+    font-size: 30px;
+    color: color($colors, primary);
+  }
+
+  ion-item {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid color($colors, primary) !important;
+    border-radius: 15px;
+    height: 4rem;
+  }
+
+  .button {
+    border: 1px solid color($colors, primary);
+    border-radius: 10px;
+    color: color($colors, secondary);
+    width: 30vw;
+  }
+
+  .a-button {
+    margin: 0;
+    color: color($colors, primary);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 50vw;
+    text-align: center;
+  }
+
+  .validation-errors {
+    margin: 4px 10px;
+    .error-message {
+      color: color($colors, danger);
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-align: start;
+      background: #fff;
+      padding: 6px;
+    }
+  }
+}

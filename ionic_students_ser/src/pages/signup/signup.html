@@ -1,0 +1,143 @@
+<ion-content>
+  <ion-row margin justify-content-center>
+    <p class="title" text-center>
+      إنشاء حساب جديد
+    </p>
+  </ion-row>
+
+  <div [formGroup]="signupForm">
+  <ion-row padding-right padding-left>
+    <ion-col col-12 text-center>
+      <ion-item>
+        <ion-input
+          type="text"
+          placeholder="اسم الطالب"
+          required="required"
+          formControlName="username"
+        ></ion-input>
+        <ion-icon name="person" color="secondary" item-start></ion-icon>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.username">
+          <div
+            class="error-message"
+            *ngIf="signupForm.get('username').hasError(validation.type) && (signupForm.get('username').touched)"
+          >
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row padding-right padding-left>
+    <ion-col col-12 text-center>
+      <ion-item>
+        <ion-icon name="lock" color="secondary" item-start></ion-icon>
+        <ion-input
+          type="password"
+          placeholder="كلمة المرور"
+          required="required"
+          formControlName="password"
+          ></ion-input>
+      </ion-item>
+    </ion-col>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div
+          class="error-message"
+          *ngIf="signupForm.get('password').hasError(validation.type) && (signupForm.get('password').touched)"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+
+  <ion-row padding-right padding-left>
+    <ion-col col-12 text-center>
+      <ion-item>
+        <ion-icon name="lock" color="secondary" item-start></ion-icon>
+        <ion-input
+          type="password"
+          placeholder="تأكيد كلمة المرور"
+          required="required"
+          formControlName="re_password"
+          ></ion-input>
+      </ion-item>
+    </ion-col>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.re_password">
+        <div
+          class="error-message"
+          *ngIf="signupForm.get('re_password').hasError(validation.type) && (signupForm.get('re_password').touched)"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+
+  <ion-row padding-right padding-left>
+    <ion-col col-12 text-center>
+      <ion-item>
+        <ion-icon name="mail" color="secondary" item-start></ion-icon>
+        <ion-input
+          placeholder="البريد الإلكتروني"
+          type="email"
+          required="required"
+          formControlName="email"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div
+          class="error-message"
+          *ngIf="signupForm.get('email').hasError(validation.type) && (signupForm.get('email').touched)"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+
+  <ion-row padding-right padding-left>
+    <ion-col col-12 text-center>
+      <ion-item class="input_border">
+        <ion-icon name="phone-portrait" color="secondary" item-start></ion-icon>
+        <ion-input
+          placeholder="رقم الهاتف"
+          type="tel"
+          required="required"
+          formControlName="mobile_number"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+    <div class="validation-errors">
+      <ng-container
+        *ngFor="let validation of validation_messages.mobile_number"
+      >
+        <div
+          class="error-message"
+          *ngIf="signupForm.get('mobile_number').hasError(validation.type) && (signupForm.get('mobile_number').touched)"
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  </ion-row>
+</div>
+
+  <ion-row margin justify-content-center>
+    <button ion-button clear text-center (click)="signup()" color="secondary">
+      تسجيل
+    </button>
+  </ion-row>
+
+  <ion-row class="border-top" padding-top justify-content-center>
+    <a col-8 text-center class="a-button"> تملك حساباً؟! </a>
+    <button col-4 clear ion-button navPop small round color="light">
+      العودة إلى تسجيل الدخول
+    </button>
+  </ion-row>
+</ion-content>

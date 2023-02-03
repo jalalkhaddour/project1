@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      طلبات اعتراض
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="newObjection()" ion-button outline round color="light">
+        طلب اعتراض جديد
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row *ngIf="loading" justify-content-center>
+    <ion-spinner></ion-spinner>
+  </ion-row>
+  <ion-card *ngFor="let objection of objections" padding>
+    <ion-card-title>
+      طلب اعتراض لمادة {{objection.course}}
+    </ion-card-title>
+    <ion-card-content>
+      <span> للعام الدراسي {{objection.year}}</span>
+      <span> - {{(objection.type == 0 )?'نظري':'عملي'}} - </span>
+      <span> للفصل {{(objection.part == 0 )?'الأول':'الثاني'}}</span>
+      <ion-row>
+        <span margin-left> حالة الطلب </span>
+        <ion-badge *ngIf="objection.status == 2"  color="success">
+          تم مراجعة طلبك و يرجى مراجعة الامتحانات
+        </ion-badge>
+        <ion-badge *ngIf="objection.status == 1" color="primary"> قيد المعالجة</ion-badge>
+        <ion-badge *ngIf="objection.status == 0" color="danger"> تم مراجعة الطلب ولا يوجد تغير </ion-badge>
+      </ion-row>
+    </ion-card-content>
+    <ion-badge>{{objection.created_at}}</ion-badge>
+  </ion-card>
+</ion-content>

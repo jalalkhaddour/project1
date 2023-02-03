@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      مقالات علمية
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row *ngIf="loading"  justify-content-center>
+    <ion-spinner></ion-spinner>
+  </ion-row>
+  <ion-card *ngFor="let article of articles" padding>
+    <img *ngIf="article.image"  src="{{article?.image}}"/>
+    <ion-card-title>
+      {{article.title}}
+    </ion-card-title>
+    <ion-label> <strong> الكاتب :</strong> {{article.author}}</ion-label>
+    <button (click)="openArticle(article)" color="secondary" ion-button icon-start outline round small>
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      <div>قراءة</div>
+    </button>
+  </ion-card>
+
+</ion-content>

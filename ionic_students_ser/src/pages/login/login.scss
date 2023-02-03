@@ -1,0 +1,72 @@
+page-login {
+
+  .title {
+    margin-top: 5px;
+    font-size: 30px;
+    color: color($colors, primary);
+  }
+
+  .w-title {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    color: color($colors, secondary);
+  }
+
+  ion-list {
+    margin-top: 5vh !important;
+  }
+  .item-border {
+    background-color: rgb(255, 255, 255) !important;
+    border: 1px solid color($colors, primary) !important;
+    border-radius: 15px;
+    height: 4rem;
+  }
+
+  .logo_login {
+    margin: 20px auto;
+    margin-top: 5vh;
+    display: block;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 1px solid color($colors, primary) !important;
+  }
+
+  .login-btn {
+    border: 1px solid color($colors, primary) ;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    color: color($colors, secondary);
+    width: 30vw;
+  }
+
+  .no-account1 {
+    color: color($colors, primary);
+    font-size: 1.3rem;
+  }
+
+  .no-account2 {
+    margin: auto 5px;
+    color: color($colors, secondary);
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .border {
+    border-top: 1px solid color($colors, primary);
+    margin: auto 25px;
+  }
+
+  .validation-errors {
+    margin: 4px 10px;
+    .error-message {
+      color: color($colors, danger);
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-align: start;
+      background: #fff;
+      padding: 6px;
+    }
+  }
+}

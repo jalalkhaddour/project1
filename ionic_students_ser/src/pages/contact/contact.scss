@@ -1,0 +1,21 @@
+page-contact {
+
+  ion-card {
+    border-radius: 15px !important;
+    ion-card-content {
+      span {
+        font-size: 1.6rem;
+        padding: 3px;
+      }
+      ion-badge {
+        font-size: 1.4rem !important;
+        padding-top: 8px !important;
+      }
+    }
+    ion-card-title {
+      font-size: 2rem !important;
+      border-bottom: 1px solid #dadada;
+    }
+  }
+  
+}

@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>نموذج التسجيل الجامعي</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-slides #re_slider dir="rtl">
+          <ion-slide>
+            <ion-list>
+              <ion-item-divider color="light">معلومات الطالب</ion-item-divider>
+
+              <ion-item>
+                <ion-label>الاسم</ion-label>
+                <ion-input [(ngModel)]="name" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>الاب</ion-label>
+                <ion-input [(ngModel)]="father" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>الام</ion-label>
+                <ion-input [(ngModel)]="mother" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>مكان و تاريخ الولادة</ion-label>
+                <ion-input
+                  [(ngModel)]="burn_place_date"
+                  type="text"
+                ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>محافظة التولد</ion-label>
+                <ion-input [(ngModel)]="burn_city" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>محل القيد و رقمه</ion-label>
+                <ion-input
+                  [(ngModel)]="registered_place_num"
+                  type="text"
+                ></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>الجنسية</ion-label>
+                <ion-input [(ngModel)]="nationality" type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-slide>
+
+          <!--  -->
+
+          <ion-slide>
+            <ion-list>
+              <ion-item-divider color="light">مستند التسجيل</ion-item-divider>
+
+              <ion-item>
+                <ion-label>الشهادة علمي-ادبي</ion-label>
+                <ion-select interface="popover" [(ngModel)]="certificate">
+                  <ion-option value="علمي">
+                    علمي
+                  </ion-option>
+                  <ion-option value="ادبي">
+                    ادبي
+                  </ion-option>
+                </ion-select>
+              </ion-item>
+          
+
+              <ion-item>
+                <ion-label>عام نيل الشهادة</ion-label>
+                <ion-datetime
+                  displayFormat="YYYY"
+                  [(ngModel)]="certificate_date"
+                ></ion-datetime>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>نوع التسجيل (عام - موازي)</ion-label>
+                <ion-select interface="popover" [(ngModel)]="register_type">
+                  <ion-option value="عام">
+                    عام
+                  </ion-option>
+                  <ion-option value="موازي">
+                    موازي
+                  </ion-option>
+                </ion-select>
+              </ion-item>
+          
+
+              <ion-item-divider color="light">الدفع</ion-item-divider>
+
+              <ion-item>
+                <ion-label>رقم ايصال الدفع</ion-label>
+                <ion-input [(ngModel)]="Payment_number" type="number"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-slide>
+
+          <!--  -->
+
+          <ion-slide>
+            <ion-list padding>
+              <div style="display: block;">
+                <img
+                  class="image-size"
+                  *ngIf="!imgURL_1"
+                  src="../../assets/imgs/id.png"
+                />
+                <img class="image-size" *ngIf="imgURL_1" [src]="imgURL_1" />
+              </div>
+              <input
+                #img_1
+                style="display: none;"
+                type="file"
+                accept="image/*"
+                (change)="onImgSelected1($event)"
+              />
+              <button (click)="img_1.click()" margin-top ion-button icon-start>
+                <ion-icon name="md-image"></ion-icon>
+                ارفق صورة الهوية
+              </button>
+            </ion-list>
+          </ion-slide>
+
+          <!--  -->
+
+          <ion-slide>
+            <ion-list padding>
+              <div style="display: block;">
+                <img
+                  class="image-size"
+                  *ngIf="!imgURL_2"
+                  src="../../assets/imgs/certificate.png"
+                />
+                <img class="image-size" *ngIf="imgURL_2" [src]="imgURL_2" />
+              </div>
+              <input
+                #img_2
+                style="display: none;"
+                type="file"
+                accept="image/*"
+                (change)="onImgSelected2($event)"
+              />
+              <button (click)="img_2.click()" margin-top ion-button icon-start>
+                <ion-icon name="md-image"></ion-icon>
+                ارفق صورة الشهادة
+              </button>
+            </ion-list>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row margin-top justify-content-center>
+    <button (click)="previousSlide()" round small ion-button icon-start>
+      السابق
+    </button>
+    <button (click)="nextSlide()" round small ion-button icon-start>
+      التالي
+    </button>
+  </ion-row>
+
+  <ion-row justify-content-center>
+    <button
+      (click)="sendRegistrationForm()"
+      margin
+      ion-button
+      icon-start
+    >
+      <ion-icon name="md-cloud-upload"></ion-icon>
+      ارسل نموذج التسجيل
+    </button>
+  </ion-row>
+</ion-footer>

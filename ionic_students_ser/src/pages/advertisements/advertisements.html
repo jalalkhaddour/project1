@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      الإعلانات
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-row *ngIf="loading"  justify-content-center>
+    <ion-spinner></ion-spinner>
+  </ion-row>
+  <ion-card *ngFor="let ad of ads" padding>
+    <ion-card-title>
+      {{ad.title}}
+    </ion-card-title>
+    <ion-label> <strong> تاريخ النشر :</strong> {{ad.created_at | date: 'short'}}</ion-label>
+    <button (click)="openArticle(ad)" color="secondary" ion-button icon-start outline round small>
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      <div>قراءة</div>
+    </button>
+  </ion-card>
+
+</ion-content>

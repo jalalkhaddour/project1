@@ -1,0 +1,14 @@
+page-registration {
+  ion-slides {
+    height: 94%;
+    .swiper-slide {
+      align-items: unset !important;
+    }
+  }
+  .image-size {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin: 0px !important;
+  }
+}

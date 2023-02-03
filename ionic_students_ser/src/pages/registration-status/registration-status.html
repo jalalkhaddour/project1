@@ -1,0 +1,35 @@
+<!--
+  Generated template for the RegistrationStatusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title> حالة التسجيل </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="status" justify-content-center padding margin-top>
+    <div *ngIf="registar_status == 2" class="success-status">
+      <ion-label col-12 text-center color="dark">
+        تمت عملية التسجيل بنجاح
+      </ion-label>
+      <ion-icon col-12 text-center color="light" name="md-checkmark-circle-outline"></ion-icon>
+    </div>
+
+    <div *ngIf="registar_status == 1" class="warning-status" no-lines>
+      <ion-label col-12 text-center color="dark">
+        تم ارسال طلب التسجيل وهو قيد المعالجة
+      </ion-label>
+      <ion-icon col-12 text-center color="dark" name="md-time"></ion-icon>
+    </div>
+
+    <div *ngIf="registar_status == 0" class="danger-status" no-lines>
+      <ion-label col-12 text-center color="dark"> تم رفض طلبك </ion-label>
+      <ion-icon col-12 text-center color="light" name="md-close-circle"></ion-icon>
+      <button ion-button color="light" block (click)="register()"> تسحيل من جديد </button>
+    </div>
+  </ion-row>
+</ion-content>

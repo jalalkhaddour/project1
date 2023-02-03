@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>الحياة الجامعية</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row justify-content-center margin-top>
+    <table border="border">
+      <tr>
+        <th>العام الدراسي</th>
+        <th>السنة</th>
+        <th>النتيجة</th>
+        <th>الملاحظات</th>
+        <th>العقوبات</th>
+      </tr>
+  
+      <tr *ngFor="let item of years_data" >
+        <td *ngIf="item.academic_year == 1" >سنة أولى</td>
+        <td *ngIf="item.academic_year == 2" >سنة ثانية</td>
+        <td *ngIf="item.academic_year == 3" >سنة ثالثة</td>
+        <td *ngIf="item.academic_year == 4" >سنة رابعة</td>
+        <td *ngIf="item.academic_year == 5" >سنة خامسة</td>
+        <td>{{item.year}}</td>
+        <td *ngIf="item.result == 0" >راسب</td>
+        <td *ngIf="item.result == 1" >ناجح</td>
+        <td>{{item.notes}}</td>
+        <td>{{item.sanctions}}</td>
+      </tr>
+      
+    </table>
+  
+  </ion-row>
+
+</ion-content>

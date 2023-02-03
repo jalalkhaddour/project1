@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ارسل طلب اعتراض
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>اسم المادة</ion-label>
+      <ion-input type="string" [(ngModel)]="course"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>عملي \ نظري</ion-label>
+      <ion-select interface="popover" [(ngModel)]="type">
+        <ion-option value="0">
+          نظري
+        </ion-option>
+        <ion-option value="1">
+          عملي
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        النسة الدراسية
+      </ion-label>
+      <ion-datetime displayFormat="YYYY" [(ngModel)]="year"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        الفصل الدراسية
+      </ion-label>
+      <ion-select interface="popover" [(ngModel)]="part">
+        <ion-option value="0">
+          الأول
+        </ion-option>
+        <ion-option value="1">
+          الثاني
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>
+       ملاحظة
+      </ion-label>
+      <ion-textarea rows="4" type="number" [(ngModel)]="body"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        الرقم الجامعي
+      </ion-label>
+      <ion-input type="number" [(ngModel)]="university_id"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-row justify-content-center>
+    <button (click)="sendObjection()" margin ion-button icon-start>
+      <ion-icon name="md-cloud-upload"></ion-icon>
+      ارسل نموذج الاعتراض
+    </button>
+  </ion-row>
+
+</ion-content>

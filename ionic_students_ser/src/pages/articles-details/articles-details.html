@@ -1,0 +1,20 @@
+
+<ion-content>
+
+  <ion-card no-margin padding>
+    <button ion-button color="secondary" navPop icon-start outline round small>
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      <div>رجوع</div>
+    </button>
+    <img class="main-img" *ngIf="article.image"  src="{{article?.image}}"/>
+    <ion-card-title>
+      {{article.title}}
+    </ion-card-title>
+    <ion-label> <strong> الكاتب :</strong> {{article.author}}</ion-label>
+    <ion-card-content [innerHTML]=article.body>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

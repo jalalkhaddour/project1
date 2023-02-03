@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-start> <span style="font-size: 1.2rem;" margin-left> {{name}} </span> &nbsp;&nbsp;&nbsp; <strong margin-right>
+        الخدمات </strong> </ion-title>
+    <ion-buttons end>
+      <ion-item no-lines>
+        <ion-label>
+          <ion-icon color="primary" name="settings"></ion-icon>
+        </ion-label>
+        <ion-select (ionChange)="selectSettings()" interface="popover" [(ngModel)]="settings">
+          <ion-option value="about">حول التطبيق</ion-option>
+          <ion-option value="logout">تسجيل خروج</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="app-title" justify-content-center>
+      <div col-4>
+        <img class="logo" item-start src="../../assets/imgs/logo.png" />
+      </div>
+      <div margin-top col-8 text-wrap>
+        <span text-center> أهلا بك </span>
+        <div>
+          تطبيق خدمات طلابية لتسهيل عملية التسجيل الجامعي و تصفح المقالات العلمية
+          و الإعلانات و تقديم طلبات الاعتراض
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="services" justify-content-center>
+      <ion-col col-6>
+        <ion-card (click)="getRegistrationStatus()" padding>
+          <ion-row justify-content-center>
+            <ion-icon col-12 text-center color="secondary" name="md-create"></ion-icon>
+            <ion-label col-12 text-center>التسجيل الجامعي</ion-label>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card (click)="openArticles()" padding>
+          <ion-row justify-content-center>
+            <ion-icon col-12 text-center color="secondary" name="md-paper"></ion-icon>
+            <ion-label col-12 text-center>مقالات علمية</ion-label>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card (click)="openAds()" padding>
+          <ion-row justify-content-center>
+            <ion-icon col-12 text-center color="secondary" name="md-copy"></ion-icon>
+            <ion-label col-12 text-center> الإعلانات </ion-label>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card (click)="openObjections()" padding>
+          <ion-row justify-content-center>
+            <ion-icon col-12 text-center color="secondary" name="md-megaphone"></ion-icon>
+            <ion-label col-12 text-center>طلبات اعتراض</ion-label>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-card (click)="openStudentYearsInfo()" padding>
+          <ion-row justify-content-center>
+            <ion-icon col-12 text-center color="secondary" name="md-calendar"></ion-icon>
+            <ion-label col-12 text-center>الحياة الجامعية</ion-label>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row class="links" justify-content-center>
+    <a col-5 text-center href="https://albaath-univ.edu.sy/" target="_blank"> موقع جامعة البعث </a>
+    <a col-5 text-center href="http://it.albaath-univ.edu.sy/" target="_blank"> موقع كلية الهندسة المعلوماتية </a>
+  </ion-row>
+</ion-footer>

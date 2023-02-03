@@ -1,0 +1,26 @@
+page-registration-status {
+  .status div {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-top: 50px !important;
+    ion-icon {
+      font-size: 5rem !important;
+    }
+    ion-label {
+      font-size: 2rem !important;
+      font-weight: bold;
+    }
+  }
+  .success-status {
+    background-color: #04ac1a80 !important;
+  }
+
+  .warning-status {
+    background-color: #f4ff5c80 !important;
+  }
+
+  .danger-status {
+    background-color: #f53d3d80 !important;
+  }
+}
